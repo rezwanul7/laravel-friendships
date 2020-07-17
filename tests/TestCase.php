@@ -4,7 +4,7 @@ namespace Tests;
 
 include_once __DIR__ . '/../tests/helpers.php';
 
-use Demency\Friendships\FriendshipsServiceProvider;
+use Rezwanul7\Friendships\FriendshipsServiceProvider;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Str;
 use Orchestra\Testbench\TestCase as BaseTestCase;

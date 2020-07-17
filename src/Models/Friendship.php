@@ -1,13 +1,13 @@
 <?php
 
-namespace Demency\Friendships\Models;
+namespace Rezwanul7\Friendships\Models;
 
-use Demency\Friendships\Status;
+use Rezwanul7\Friendships\Status;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Friendship
- * @package Demency\Friendships\Models
+ * @package Rezwanul7\Friendships\Models
  */
 class Friendship extends Model
 {

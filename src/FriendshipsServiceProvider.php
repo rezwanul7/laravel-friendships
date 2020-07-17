@@ -1,6 +1,6 @@
 <?php
 
-namespace Demency\Friendships;
+namespace Rezwanul7\Friendships;
 
 use Illuminate\Support\ServiceProvider;
 

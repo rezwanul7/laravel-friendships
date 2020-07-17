@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Demency\Friendships\Repositories;
+namespace Rezwanul7\Friendships\Repositories;
 
 
 use Exception;

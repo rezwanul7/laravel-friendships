@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Demency\Friendships\Traits\Friendable;
+use Rezwanul7\Friendships\Traits\Friendable;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;

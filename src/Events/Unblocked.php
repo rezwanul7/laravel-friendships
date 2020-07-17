@@ -1,8 +1,8 @@
 <?php
 
-namespace Demency\Friendships\Events;
+namespace Rezwanul7\Friendships\Events;
 
-use Demency\Friendships\Traits\Friendable;
+use Rezwanul7\Friendships\Traits\Friendable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;

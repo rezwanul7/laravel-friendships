@@ -1,6 +1,6 @@
 <?php
 
-namespace Demency\Friendships;
+namespace Rezwanul7\Friendships;
 
 /**
  * Class Status.

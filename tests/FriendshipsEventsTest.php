@@ -2,12 +2,12 @@
 
 namespace Tests;
 
-use Demency\Friendships\Events\Accepted;
-use Demency\Friendships\Events\Blocked;
-use Demency\Friendships\Events\Cancelled;
-use Demency\Friendships\Events\Denied;
-use Demency\Friendships\Events\Sent;
-use Demency\Friendships\Events\Unblocked;
+use Rezwanul7\Friendships\Events\Accepted;
+use Rezwanul7\Friendships\Events\Blocked;
+use Rezwanul7\Friendships\Events\Cancelled;
+use Rezwanul7\Friendships\Events\Denied;
+use Rezwanul7\Friendships\Events\Sent;
+use Rezwanul7\Friendships\Events\Unblocked;
 use Illuminate\Support\Facades\Event;
 
 class FriendshipsEventsTest extends TestCase
