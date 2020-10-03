@@ -117,48 +117,43 @@ trait Friendable
 
     /**
      * @param Model $friend
-     * @param $groupSlug
+     * @param $groupId
      * @return bool
      */
-    public function groupFriend(Model $friend, $groupSlug)
+    public function groupFriend(Model $friend, $groupId)
     {
-        $friendship       = $this->findFriendship($friend)->whereStatus(Status::ACCEPTED)->first();
-        $groupsAvailable = config('friendships.groups', []);
-        if (!isset($groupsAvailable[$groupSlug]) || empty($friendship)) {
-            return false;
+        $friendship = $this->findFriendship($friend)->whereStatus(Status::ACCEPTED)->first();
+        if (empty($friendship)) {
+            abort(404, "There is no friendship exists between these users");
         }
         $group = $friendship->groups()->firstOrCreate([
             'friendship_id' => $friendship->id,
-            'group_id'      => $groupsAvailable[$groupSlug],
-            'friend_id'     => $friend->getKey(),
-            'friend_type'   => $friend->getMorphClass(),
+            'group_id' => $groupId,
+            'friend_id' => $friend->getKey(),
+            'friend_type' => $friend->getMorphClass(),
         ]);
         return $group->wasRecentlyCreated;
     }
 
     /**
      * @param Model $friend
-     * @param $groupSlug
+     * @param $groupId
      * @return bool
      */
-    public function ungroupFriend(Model $friend, $groupSlug = '')
+    public function ungroupFriend(Model $friend, $groupId)
     {
-        $friendship       = $this->findFriendship($friend)->first();
-        $groupsAvailable = config('friendships.groups', []);
+        $friendship = $this->findFriendship($friend)->first();
         if (empty($friendship)) {
-            return false;
+            abort(404, "There is no friendship exists between these users");
         }
         $where = [
             'friendship_id' => $friendship->id,
-            'friend_id'     => $friend->getKey(),
-            'friend_type'   => $friend->getMorphClass(),
+            'friend_id' => $friend->getKey(),
+            'friend_type' => $friend->getMorphClass(),
         ];
-        if ('' !== $groupSlug && isset($groupsAvailable[$groupSlug])) {
-            $where['group_id'] = $groupsAvailable[$groupSlug];
-        }
+        $where['group_id'] = $groupId;
         $result = $friendship->groups()->where($where)->delete();
         return $result;
-
     }
 
     /**
